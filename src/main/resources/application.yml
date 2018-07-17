@@ -20,3 +20,27 @@ spring:
     template:
       cache: false
 
+##
+restart:
+  include:
+    mapper: /mapper-[\\w-\\.]+jar
+    pagehelper: /pagehelper-[\\w-\\.]+jar
+
+##mybatis
+mybatis:
+  type-aliases-package: com.springboot.newGirl.pojo
+  mapper-locations: classpath:mapper/*.xml
+##mapper
+mapper:
+  mappers: com.springboot.newGirl.mapper
+  not-empty: false
+  identity: MYSQL
+##pagehelper
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countSql
+
+
+
