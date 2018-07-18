@@ -6,6 +6,7 @@ spring:
      url: jdbc:mysql://127.0.0.1:3306/springboot
      username: root
      password: root
+
   jpa:
     hibernate:
       ddl-auto: update
@@ -20,6 +21,7 @@ spring:
     template:
       cache: false
 
+
 ##
 restart:
   include:
@@ -28,19 +30,16 @@ restart:
 
 ##mybatis
 mybatis:
-  type-aliases-package: com.springboot.newGirl.pojo
+  type-aliases-package: com.sprigboot.mybatis.pojo
   mapper-locations: classpath:mapper/*.xml
 ##mapper
-mapper:
-  mappers: com.springboot.newGirl.mapper
-  not-empty: false
-  identity: MYSQL
 ##pagehelper
 pagehelper:
   helper-dialect: mysql
   reasonable: true
   support-methods-arguments: true
   params: count=countSql
+
 
 
 

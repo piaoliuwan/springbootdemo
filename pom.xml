@@ -49,6 +49,7 @@
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.41</version>
 		</dependency>
 		<!--AOP-->
 		<dependency>
@@ -108,6 +109,19 @@
 					<overwrite>true</overwrite>
 					<verbose>true</verbose>
 				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>mysql</groupId>
+						<artifactId>mysql-connector-java</artifactId>
+						<version>${mysql.version}</version>
+					</dependency>
+					<dependency>
+						<groupId>tk.mybatis</groupId>
+						<artifactId>mapper</artifactId>
+						<version>3.3.6</version>
+					</dependency>
+
+				</dependencies>
 			</plugin>
 
 		</plugins>
