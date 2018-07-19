@@ -7,11 +7,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 public class MybatisController {
 
     @Autowired
     private GirlService  girlService;
+
 
     @GetMapping(value = "mybatis/test")
     public void add(){
@@ -20,5 +23,14 @@ public class MybatisController {
         girl.setCupSize("B");
         girl.setMoney(500.0);
         girlService.save(girl);
+    }
+
+    @GetMapping(value = "mybatis/pagehelper")
+    public List<Girl> queryAll(){
+       return girlService.queryList();
+    }
+    @GetMapping(value = "mybatis/myself")
+    public Girl findgirlmyself(){
+        return girlService.myselfSelect("1");
     }
 }
