@@ -43,7 +43,7 @@ public class MybatisController {
         girl.setMoney(432.8);
         girl.setCupSize("D");
         girl.setAge(24);
-        //String json = JSONUtils.toJSONString(girl);
+        //String json = JSONUtils.toJSONString(girl)SWWW;
         stringRedisTemplate.opsForValue().set("girl","1235");
         return stringRedisTemplate.opsForValue().get("girl");
     }
